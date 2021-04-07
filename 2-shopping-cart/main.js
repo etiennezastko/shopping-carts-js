@@ -1,12 +1,15 @@
 const counter=document.getElementById('counter');
-const butonPlus=document.getElementById('plus');
-const butonMinus=document.getElementById('minus');
+const buttonPlus=document.getElementById('plus');
+const buttonMinus=document.getElementById('minus');
 let counterValue=0;
 const applePrice=0.97;
 const total=document.getElementById('total');
-var addition=counterValue*applePrice;
+//var addition=counterValue*applePrice;
 
-butonPlus.addEventListener('click', function(){
+buttonPlus.addEventListener('click',more);
+buttonMinus.addEventListener('click',less);
+
+function more(){
     counterValue++;
     console.log(counterValue);
     counter.innerHTML=counterValue+' articles';
@@ -17,9 +20,10 @@ butonPlus.addEventListener('click', function(){
         counter.innerHTML=counterValue+' articles';  
     }
     document.getElementById("total").innerHTML=counterValue*applePrice;
-});
+}
 
-butonMinus.addEventListener('click', function(){
+
+function less(){
     counterValue--;
     console.log(counterValue);
     if(counterValue<=0){
@@ -33,4 +37,4 @@ butonMinus.addEventListener('click', function(){
         counter.innerHTML=counterValue+' articles';
     }
     document.getElementById("total").innerHTML=counterValue*applePrice;
-});
+}
